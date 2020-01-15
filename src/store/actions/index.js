@@ -6,7 +6,7 @@ export const fetchDevices = () => async dispatch => {
     dispatch({type: FETCH_DEVICES_START});
 
     try {
-        const response = await items.get('/');
+        const response = await devices.get('/');
         dispatch({type: FETCH_DEVICES, payload: response.data});
     }
     catch(error) {
