@@ -1,0 +1,79 @@
+/* Reset: */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+div, span, a {
+	box-sizing: border-box;
+}
+
+main, fieldset, form, label, caption, article, aside, canvas, 
+figure, figcaption, footer, header, address, nav, section, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	display: block;
+	box-sizing: border-box;
+}
+
+table, input, button, textarea {
+	font-family: inherit;
+	font-size: 100%;
+	box-sizing: border-box;	
+}
+
+/*============= General styles: ======================*/
+body {
+	font-weight: normal;
+	font-family: "Lato", sans-serif;
+	color: #34333b;
+	background-color: #f8f8fa;
+	font-size: 85%;
+}
+
+h1 {
+	font-weight: normal;
+	font-size: 180%;	
+	text-align: center;
+}
+
+main {
+	padding-top: 37px;
+	max-width: 1282px;
+	text-align: center;
+	margin: 0 auto;	
+}
+
+table {
+	background-color: #fff;	
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table th {
+	font-weight: bold;
+	color: #9f3575;		
+}
+
+table th, 
+table td {
+	text-align: left;
+	border-bottom: 4px solid #f8f8fa;
+}
+table th {
+	padding: 18px 30px 18px 30px;
+}
+
+table tr:hover {
+	background-color: #f4f4f6;
+}
+
+.error {
+	color: red;
+	font-size: 120%
+}
+
+td.error {
+	text-align: center;
+	padding: 18px 30px;
+}
