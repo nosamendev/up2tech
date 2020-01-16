@@ -38,8 +38,8 @@ const DeviceList = (props) => {
         if (!isInitailReducerObject(devicesArr)) {
 
             const deviceList =[];
-
-            for (let i = 0; i < devicesArr.length; i++) {
+            console.log('len',devicesArr);
+            for (let i = 0; i < devicesArr.length - 3; i++) {
                 const props = {};
                 if (devicesArr[i].lastData) {
                     props.id = devicesArr[i].lastData.id;
@@ -51,9 +51,6 @@ const DeviceList = (props) => {
                     if (devicesArr[i].lastData.content.meta) {
                         props.barrierId = devicesArr[i].lastData.content.meta.barrierId;
                     }
-                }
-                else {
-                    console.log(i)
                 }
                 
                 deviceList[i] = <Device key={i} {...props} />;    
