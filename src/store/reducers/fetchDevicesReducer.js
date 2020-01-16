@@ -3,8 +3,7 @@ import { FETCH_DEVICES, FETCH_DEVICES_START, FETCH_DEVICES_FAILED } from "../act
 const INITIAL_STATE = {
     error: false,
     loading: false,
-    description: '',
-    devices: []
+    description: ''
 };
 
 const fetchDevicesReducer = (state = INITIAL_STATE, action) => {

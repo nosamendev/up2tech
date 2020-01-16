@@ -9,7 +9,7 @@ const port = 3000
 const resJson = JSON.parse( fs.readFileSync( './devices.json' ).toString() );
 
 app.use( cors( {
-	"origin": "localhost:3002",
+	"origin": "http://localhost:3001",
 	"optionsSuccessStatus": 200
 } ) );
 
