@@ -10,22 +10,6 @@ const DeviceList = (props) => {
         props.fetchDevices();
     }, []);
 
-    const devicesArr = Object.values(props.devices);
-    
-    const isInitailReducerObject = (arr) => {
-       if (devicesArr.length !== arr.length) {
-            return true;
-       }
-       else {
-           if ((arr[0] == false) && (arr[1] == false) && (arr[2] == "")) {
-                return true;
-           }
-           else {
-               return false;
-           }
-       }
-    }
-
     const displayDevices = () => {
         if (props.error) {
             return (
@@ -35,27 +19,26 @@ const DeviceList = (props) => {
             )
         }
         
-        if (!isInitailReducerObject(devicesArr)) {
-
+        if (props.devices.length != 0) {
             const deviceList =[];
-            console.log('len',devicesArr);
-            for (let i = 0; i < devicesArr.length - 3; i++) {
-                const props = {};
-                if (devicesArr[i].lastData) {
-                    props.id = devicesArr[i].lastData.id;
-                    props.fCntUp = devicesArr[i].lastData.content.fCntUp;
-                    props.battery = devicesArr[i].lastData.content.battery;
-                    props.lat = devicesArr[i].lastData.content.lat;
-                    props.lng = devicesArr[i].lastData.content.lng;
+            for (let i = 0; i < props.devices.length; i++) {
+                const deviceProps = {};
 
-                    if (devicesArr[i].lastData.content.meta) {
-                        props.barrierId = devicesArr[i].lastData.content.meta.barrierId;
+                if (props.devices[i].lastData) {
+                    deviceProps.id = props.devices[i].lastData.id;
+                    deviceProps.fCntUp = props.devices[i].lastData.content.fCntUp;
+                    deviceProps.battery = props.devices[i].lastData.content.battery;
+                    deviceProps.lat = props.devices[i].lastData.content.lat;
+                    deviceProps.lng = props.devices[i].lastData.content.lng;
+
+                    if (props.devices[i].lastData.content.meta) {
+                        deviceProps.barrierId = props.devices[i].lastData.content.meta.barrierId;
                     }
                 }
                 
-                deviceList[i] = <Device key={i} {...props} />;    
+                deviceList[i] = <Device key={i} {...deviceProps} />;    
             }
-            return deviceList
+            return deviceList;
         }    
     }
 
@@ -88,7 +71,7 @@ const DeviceList = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        devices: state.fetchDevicesReducer,
+        devices: state.fetchDevicesReducer.devices,
         errorDescription: state.fetchDevicesReducer.description.message,
         error: state.fetchDevicesReducer.error,
         loading: state.fetchDevicesReducer.loading

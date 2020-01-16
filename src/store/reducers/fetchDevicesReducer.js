@@ -3,13 +3,15 @@ import { FETCH_DEVICES, FETCH_DEVICES_START, FETCH_DEVICES_FAILED } from "../act
 const INITIAL_STATE = {
     error: false,
     loading: false,
-    description: ''
+    description: '',
+    devices: []
 };
 
 const fetchDevicesReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case FETCH_DEVICES:
-            return {...state, ...action.payload, loading: false};       
+            state.devices = action.payload;
+            return {...state,  loading: false};       
         case FETCH_DEVICES_START:
             return {...state, loading: true}
         case FETCH_DEVICES_FAILED:
