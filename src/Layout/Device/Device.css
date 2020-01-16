@@ -1,0 +1,6 @@
+section.device-list {
+    background-color:#fff;
+    padding: 30px;
+    overflow: auto;
+    border-radius: 5px;
+}

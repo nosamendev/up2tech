@@ -11,8 +11,7 @@ const DeviceList = (props) => {
     }, []);
 
     const devicesArr = Object.values(props.devices);
-    console.log(devicesArr);
-
+    
     const isInitailReducerObject = (arr) => {
        if (devicesArr.length !== arr.length) {
             return true;
@@ -36,7 +35,7 @@ const DeviceList = (props) => {
             )
         }
         
-       if (!isInitailReducerObject(devicesArr)) {
+        if (!isInitailReducerObject(devicesArr)) {
 
             const deviceList =[];
 
@@ -53,13 +52,14 @@ const DeviceList = (props) => {
                         props.barrierId = devicesArr[i].lastData.content.meta.barrierId;
                     }
                 }
+                else {
+                    console.log(i)
+                }
                 
-                deviceList[i] = <Device key={i} {...props} />;
-                
+                deviceList[i] = <Device key={i} {...props} />;    
             }
             return deviceList
-       }
-        
+        }    
     }
 
     if (props.loading) {
@@ -68,15 +68,15 @@ const DeviceList = (props) => {
     
     return (
         <React.Fragment>
-            <section className="item-list"> 
+            <section className="device-list"> 
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Monitoring ID</th>
                             <th>fCntUp</th>
                             <th>Battery</th>
-                            <th>Lat</th>
-                            <th>Lng</th>
+                            <th>Lattitude</th>
+                            <th>Longitude</th>
                             <th>Barrier ID</th>
                         </tr>
                     </thead>

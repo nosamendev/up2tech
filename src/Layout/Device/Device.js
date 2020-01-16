@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import './Device.css'; 
 
 const Device = (props) => {
     useEffect(() => {
