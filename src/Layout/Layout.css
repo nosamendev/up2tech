@@ -80,3 +80,8 @@ td.error {
 	text-align: center;
 	padding: 18px 30px;
 }
+
+.warn {
+	color: orange;
+	font-weight: bold;
+}
