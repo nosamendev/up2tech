@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Device.css'; 
 
 const Device = (props) => {
@@ -23,6 +24,15 @@ const Device = (props) => {
             <td>{props.barrierId}</td>
         </tr>
     );
+}
+
+Device.propTypes = {
+    id: PropTypes.string.isRequired,
+    fCntUp: PropTypes.string,
+    battery: PropTypes.string,
+    lat: PropTypes.string,
+    lng: PropTypes.string,
+    barrierId: PropTypes.string
 }
 
 export default Device;

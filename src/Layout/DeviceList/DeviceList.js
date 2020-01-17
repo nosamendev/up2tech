@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { fetchDevices } from '../../store/actions'; 
 import Device from '../Device/Device';
 import Loader from '../Loader/Loader';
@@ -67,6 +68,14 @@ const DeviceList = (props) => {
             </section>
         </React.Fragment>
     );
+}
+
+DeviceList.propTypes = {
+    devices: PropTypes.array.isRequired,
+    fetchDevices: PropTypes.func.isRequired,
+    error: PropTypes.bool.isRequired,
+    errorDescription: PropTypes.string,
+    loading: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = (state) => {
