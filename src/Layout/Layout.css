@@ -81,7 +81,12 @@ td.error {
 	padding: 18px 30px;
 }
 
-.warn {
+.warn1 {
 	color: orange;
+	font-weight: bold;
+}
+
+.warn2 {
+	color: orangered;
 	font-weight: bold;
 }

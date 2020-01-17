@@ -341,7 +341,7 @@
             }
           ]
         },
-        "battery": 87,
+        "battery": 35,
         "profile": 3,
         "cmdAck": 0,
         "gpsFixAge": 255,
@@ -543,7 +543,7 @@
             }
           ]
         },
-        "battery": 88,
+        "battery": 28,
         "profile": 3,
         "cmdAck": 0,
         "gpsFixAge": 255,
