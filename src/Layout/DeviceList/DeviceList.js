@@ -20,7 +20,7 @@ const DeviceList = (props) => {
             )
         }
         
-        if (props.devices.length != 0) {
+        if (props.devices.length !== 0) {
             const deviceList =[];
             for (let i = 0; i < props.devices.length; i++) {
                 const deviceProps = {};
@@ -37,7 +37,7 @@ const DeviceList = (props) => {
                     }
                 }
                 
-                deviceList[i] = <Device key={i} {...deviceProps} />;    
+                deviceList[i] = <Device key={props.devices[i].lastData.id} {...deviceProps} />;    
             }
             return deviceList;
         }    

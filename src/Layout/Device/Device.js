@@ -28,10 +28,10 @@ const Device = (props) => {
 
 Device.propTypes = {
     id: PropTypes.string.isRequired,
-    fCntUp: PropTypes.string,
-    battery: PropTypes.string,
-    lat: PropTypes.string,
-    lng: PropTypes.string,
+    fCntUp: PropTypes.number,
+    battery: PropTypes.number,
+    lat: PropTypes.number,
+    lng: PropTypes.number,
     barrierId: PropTypes.string
 }
 
